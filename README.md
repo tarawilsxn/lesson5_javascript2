@@ -4,13 +4,13 @@
 Web Application Development
 
 ### Assignment Date:  
-(Month Day, Year)
+October 30th, 2018
 
 ### Student Name:  
-(First and Last Name)
+Tara Wilson
 
 ### Project Description:
-(In your own words, briefly describe the assignment.)
+In this project I used switch statements to calculate currency exchange values.
 
 ### View Project:
 (Replace this statement with your Github Page URL that was created when you 

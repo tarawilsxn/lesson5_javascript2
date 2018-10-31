@@ -28,8 +28,8 @@ function calculateCurrency(){
          *                       INSERT YOUR CODE BELOW!
         *******************************************************************************/
         
-         //This variable stores the result of the calculation
-         var exchangeRate;
+        //This variable stores the result of the calculation
+        var exchangeRate;
          
         //This variable stores the value retrieved from the textfield.
         var usdAmount = document.getElementById("usdAmount").value;
@@ -38,6 +38,10 @@ function calculateCurrency(){
         //This variable stores the country the user selects from the dropdown menu.
         var country = document.getElementById("country").value;
         
+        //TESTING
+        //alert(country);
+        //alert(usdAmount);
+        
         //This variable set the selected country name for printing purposes.
         var countryName;
         
@@ -45,13 +49,22 @@ function calculateCurrency(){
         //to the exchange rate for each country
         //USE THE TABLE PROVIDED FOR VALUES!!!
         var AUD = 1.40885; //exchange rate for Austrialian Dollar
-        var AWG = 1.78511;
+        var AWG = 1.78511; //exchange rate for Aruban Florin
+        var BSD = 1.0000;  //exchange rate for Bahamian Dollar
+        var XBT = 0.00015; //exchange rate for Bitcoin
+        var GBP = 0.76826; //exchange rate for British Pound
+        var CAD = 1.30976; //exchange rate for Canadian Dollar
+        var CLP = 683.205; //exchange rate for Chilean Pesso
+        var CNY = 6.93780; //exchange rate for Chinese Yuan Renminibi
+        var CUP = 25.0000; //exchange rate for Cuban Peso
+        var DKK = 6.49079; //exchange rate for Danish Krone
+        var EUR = 0.87007; //exchange rate for Euro
+        var EGP = 17.8726; //exchange rate for Egyptian Pound
+        var HKD = 7.83955; //exchange rate forr Hong Kong Dollar
+        var IRR = 42000;   //exchange rate for Iranian Rial
+        var NGN = 361.969; //exchange rate for Nigerian Naira
 
-         
-         
-         
-         
-        
+
         /*******************************************************************************************
          * Task 3:  Calculate the exchange rate for each country using a selection statement.
          *          You are allowed to use either an if/else-if statement or a switch statement.
@@ -78,16 +91,83 @@ function calculateCurrency(){
         *********************************************************************************************/
          
          //Calculate the exchange rate and set the country prefix using a selection statement
+        switch ( country ){
+            case "0":
+                countryName = "AUD";
+                exchangeRate = usdAmount * AUD;
+                break;
+                
+            case "1":
+                countryName = "AWG";
+                exchangeRate = usdAmount * AWG;
+                break;
+                
+            case "2":
+                countryName = "BSD";
+                exchangeRate = usdAmount * BSD;
+                break;
+                
+            case "3":
+                countryName = "XBT";
+                exchangeRate = usdAmount * XBT;
+                break;
+                
+            case "4":
+                countryName = "GBP";
+                exchangeRate = usdAmount * GBP;
+                break;
+                
+            case "5":
+                countryName = "CAD";
+                exchangeRate = usdAmount * CAD;
+                break;
+                
+            case "6":
+                countryName = "CLP";
+                exchangeRate = usdAmount * CLP;
+                break;
+                
+            case "7":
+                countryName = "CNY";
+                exchangeRate = usdAmount * CNY;  
+                break;
+                
+            case "8":
+                countryName = "CUP";
+                exchangeRate = usdAmount * CUP;
+                break;
+                
+            case "9":
+                countryName = "DKK";
+                exchangeRate = usdAmount * DKK;
+                break;
+                
+            case "10":
+                countryName = "EUR";
+                exchangeRate = usdAmount * EUR;
+                break;
+                
+            case "11":
+                countryName = "EGP";
+                exchangeRate = usdAmount * EGP;
+                break;
+                
+            case "12":
+                countryName = "HKD";
+                exchangeRate = usdAmount * HKD;
+                break;
+            
+            case "13":
+                countryName = "IRR";
+                exchangeRate = usdAmount * IRR;
+                break;
+                
+            case "14":
+                countryName = "NGN";
+                exchangeRate = usdAmount * NGN;
+                break;
+        }//end of switch
 
-
-
-
-
-
-
-
-
-          
         /**********************************************************************************************
          * Task 4:  PRINT THE CURRENCY EXCHANGE RATE INFORMATION TO THE HTML DOCUMENT: 
          * 
@@ -100,15 +180,9 @@ function calculateCurrency(){
          * HINT:    document.getElementById("currencyExchangeInfo").innerHTML = FINISH THIS STATEMENT!
          * 
          *                                INSERT YOUR CODE BELOW!
-        ***********************************************************************************************/                                                                                                               
+        ***********************************************************************************************/                                                                                             
+        document.getElementById("currencyExchangeInfo").innerHTML = "Selling $" + usdAmount + " ====> Buys $" + exchangeRate + " " + countryName; 
 
-
-
-
-
-
-
-      
 }//end of calculateCurrency function  
 
 
@@ -146,10 +220,12 @@ function clearButton () {
         
         
         //Remove the text from the textfield
+        document.getElementById("currencyExchangeInfo").value = 0;
         
         
         
         //Remove the currency exchange information from the document where the id is: "currencyExchangeInfo"
+        document.getElementById("currencyExchangeInfo").innerHTML = "";
 
 
 }//end of clearButton function
